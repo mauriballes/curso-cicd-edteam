@@ -10,6 +10,7 @@ Instalar dependencias:
     - pip install virtualenv
     - virtualenv venv
   script:
+    - env
     - source venv/bin/activate
     - pip install -r requirements.txt
   artifacts:
