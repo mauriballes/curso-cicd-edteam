@@ -32,10 +32,5 @@ Desplegar app:
     - apt-get install -y make gcc curl git
   script:
     - gem install dpl --pre
-    - dpl heroku api --api_key $HEROKU_API --app python-runner-app
-
-
-
-
-
+    - dpl heroku api --api_key $HEROKU_API_KEY --app python-runner-app
 
