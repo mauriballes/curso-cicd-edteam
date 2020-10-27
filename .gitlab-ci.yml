@@ -29,7 +29,7 @@ Desplegar app:
   stage: deploy
   before_script:
     - apt-get update -qy
-    - apt-get install ruby-dev
+    - apt-get install -y ruby-dev
   script:
     - gem install dpl --pre
     - dpl heroku api --api_key $HEROKU_API --app gitlab-python-ci-edteam
