@@ -3,26 +3,26 @@ stages:
   - test
   - deploy
 
-# Instalar dependencias:
-#   image: python:3.7-slim
-#   stage: build
-#   before_script:
-#     - pip install virtualenv
-#     - virtualenv venv
-#   script:
-#     - env
-#     - source venv/bin/activate
-#     - pip install -r requirements.txt
-#   artifacts:
-#     paths:
-#       - venv
+Instalar dependencias:
+  image: python:3.7-slim
+  stage: build
+  before_script:
+    - pip install virtualenv
+    - virtualenv venv
+  script:
+    - env
+    - source venv/bin/activate
+    - pip install -r requirements.txt
+  artifacts:
+    paths:
+      - venv
 
-# Ejecutar pruebas:
-#   image: python:3.7-slim
-#   stage: test
-#   script:
-#     - source venv/bin/activate
-#     - pytest
+Ejecutar pruebas:
+  image: python:3.7-slim
+  stage: test
+  script:
+    - source venv/bin/activate
+    - pytest
 
 Desplegar app:
   image: ruby:2.3-slim
@@ -32,15 +32,7 @@ Desplegar app:
     - apt-get install -y make gcc
   script:
     - gem install dpl --pre
-    - dpl heroku api --api_key $HEROKU_API --app gitlab-python-ci-edteam
-
-
-
-
-
-
-
-
+    - dpl heroku api --api_key $HEROKU_API --app python-runner-app
 
 
 
