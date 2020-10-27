@@ -28,8 +28,14 @@ Desplegar app:
   image: ruby:2.3-slim
   stage: deploy
   script:
-    - gem install dpl
-    - dpl heroku api --api_key $HEROKU_API
+    - gem install dpl --pre
+    - dpl --provider=heroku --api_key=$HEROKU_API --app=gitlab-python-ci-edteam
+
+
+
+
+
+
 
 
 
