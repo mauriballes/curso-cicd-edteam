@@ -3,6 +3,7 @@ import os
 from flask import Flask, render_template, request, g, redirect, url_for
 from peewee import SqliteDatabase
 
+from models import create_tables
 from helpers import get_all_tasks, create_task
 
 
@@ -15,6 +16,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 database = SqliteDatabase(DB_NAME)
 
+create_tables(database)  # Create DB
 
 # Middlewares
 @app.before_request
