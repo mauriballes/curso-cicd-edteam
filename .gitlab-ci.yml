@@ -29,7 +29,7 @@ Desplegar app:
   stage: deploy
   script:
     - gem install dpl --pre
-    - dpl --provider=heroku --api_key=$HEROKU_API --app=gitlab-python-ci-edteam
+    - dpl heroku api --api_key $HEROKU_API --app gitlab-python-ci-edteam
 
 
 
