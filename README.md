@@ -2,6 +2,26 @@
 
 El siguiente rtepositorio contiene los archivos del proyecto en Python que usaremos para las prácticas del curso de CI/CD con GitLab, además de los enlaces a varios de los recursos.
 
+### Como correr el proyecto
+
+##### Requerimientos
+
+- Python (> v3.6)
+
+##### Crear entorno virtual y activarlo
+
+```bash
+pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+```
+
+##### Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
 ### Enlaces relevantes
 
 - [Google Cloud Console](https://console.cloud.google.com/)
