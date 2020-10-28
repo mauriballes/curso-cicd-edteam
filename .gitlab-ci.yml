@@ -24,13 +24,28 @@ Ejecutar pruebas:
     - source venv/bin/activate
     - pytest
 
-Desplegar app:
+Desplegar app (Pre Production):
   image: ruby:2.3-slim
   stage: deploy
+  only:
+    refs:
+      - staging
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y make gcc curl git
+  script:
+    - gem install dpl --pre
+    - dpl heroku api --api_key $HEROKU_API_KEY --app python-runner-app-staging
+
+Desplegar app (Production):
+  image: ruby:2.3-slim
+  stage: deploy
+  only:
+    refs:
+      - master
   before_script:
     - apt-get update -qy
     - apt-get install -y make gcc curl git
   script:
     - gem install dpl --pre
     - dpl heroku api --api_key $HEROKU_API_KEY --app python-runner-app
-
